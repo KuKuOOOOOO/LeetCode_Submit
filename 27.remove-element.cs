@@ -15,7 +15,8 @@ public class Solution
         {
             if(nums[i] != val)
             {
-                nums[cnt++] = nums[i];
+                nums[cnt] = nums[i];
+                cnt++;
             }
         }
         return cnt;
