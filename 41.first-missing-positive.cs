@@ -13,12 +13,14 @@ public class Solution
     {
         int numsLength = nums.Length;
 
+        // Step 1: 把 <= 0 & > n的數字更改成n + 1
         for (int i = 0; i < numsLength; i++)
         {
             if (nums[i] <= 0 || nums[i] > numsLength)
                 nums[i] = numsLength + 1;
         }
 
+        // Step 2: 使用Index標記出現過的 1..n
         for (int i = 0; i < numsLength; i++)
         {
             int positiveNum = Math.Abs(nums[i]);
@@ -32,6 +34,7 @@ public class Solution
             }
         }
 
+        // Step 3: 找第一個仍然為正數的位置
         for (int i = 0; i < numsLength; i++)
         {
             if (nums[i] > 0)
